@@ -24,6 +24,7 @@ npm run lint
 
 - **Datos personales** (nombre, rol, correo, redes, texto de "sobre mí"): `src/data/site.ts`.
 - **Proyectos**: `src/data/projects.ts`. Para agregar uno, suma un objeto a la lista y guarda su captura (1280×800) en `public/projects/`. El primero se muestra destacado. Si `url` es `null`, la tarjeta abre el repositorio.
+- **Idiomas**: español en `/` e inglés en `/en` (next-intl). Los textos de la interfaz están en `src/i18n/messages/es.json` y `en.json`; los textos personales y las descripciones de proyectos tienen su versión `es` y `en` en los archivos de `src/data/`. El botón de la barra cambia de idioma.
 - **Dirección del sitio** para SEO y la imagen Open Graph: variable de entorno `NEXT_PUBLIC_SITE_URL` (sin `/` final).
 
 ## Despliegue

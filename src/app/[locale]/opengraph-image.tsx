@@ -1,12 +1,18 @@
 import { ImageResponse } from "next/og";
 import { projects } from "@/data/projects";
 import { site } from "@/data/site";
+import { routing, type Locale } from "@/i18n/routing";
 
-export const alt = `${site.name} · ${site.role}`;
+export const alt = site.name;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function OpengraphImage({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
   return new ImageResponse(
     (
       <div
@@ -41,11 +47,11 @@ export default function OpengraphImage() {
           >
             RU
           </div>
-          {site.role}
+          {site.role[locale]}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 104, fontWeight: 700, letterSpacing: -4, lineHeight: 1 }}>{site.name}</div>
-          <div style={{ marginTop: 24, fontSize: 32, color: "#a1a1a1", maxWidth: 900 }}>{site.tagline}</div>
+          <div style={{ marginTop: 24, fontSize: 32, color: "#a1a1a1", maxWidth: 900 }}>{site.tagline[locale]}</div>
         </div>
         <div style={{ display: "flex", gap: 12 }}>
           {projects.map((p) => (

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import type { Project } from "@/data/projects";
 
@@ -21,10 +22,11 @@ export function hostOf(url: string) {
 // Marco de navegador con la captura del proyecto; si `live` está activo,
 // carga el sitio real en un iframe escalado encima de la captura.
 export function BrowserFrame({ project, live, priority }: Props) {
+  const t = useTranslations("Projects");
   const bodyRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(0.5);
   const [loaded, setLoaded] = useState(false);
-  const host = project.url ? hostOf(project.url) : "próximamente";
+  const host = project.url ? hostOf(project.url) : t("comingSoon");
 
   useEffect(() => {
     const el = bodyRef.current;
@@ -67,7 +69,7 @@ export function BrowserFrame({ project, live, priority }: Props) {
         {live && project.url && (
           <iframe
             src={project.url}
-            title={`Vista previa en vivo de ${project.title}`}
+            title={t("livePreview", { title: project.title })}
             aria-hidden
             tabIndex={-1}
             loading="lazy"

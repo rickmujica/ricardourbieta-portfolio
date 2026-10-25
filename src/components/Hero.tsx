@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useLocale, useTranslations } from "next-intl";
 import BlurText from "@/components/reactbits/BlurText";
 import DecryptedText from "@/components/reactbits/DecryptedText";
 import LightRays from "@/components/reactbits/LightRays";
@@ -9,6 +10,9 @@ import { site } from "@/data/site";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 export function Hero() {
+  const t = useTranslations("Hero");
+  const locale = useLocale();
+
   return (
     <section className="relative isolate flex min-h-[88dvh] flex-col items-center justify-center overflow-hidden px-4 pt-24 pb-16 text-center sm:px-6">
       <div aria-hidden className="grid-backdrop absolute inset-0 -z-20" />
@@ -37,7 +41,7 @@ export function Hero() {
             <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-60 motion-reduce:hidden" />
             <span className="relative inline-flex size-1.5 rounded-full bg-emerald-400" />
           </span>
-          Disponible para nuevos proyectos
+          {t("available")}
         </motion.p>
       )}
 
@@ -51,7 +55,7 @@ export function Hero() {
       />
 
       <p className="mt-6 font-mono text-sm uppercase tracking-[0.2em] text-muted">
-        <DecryptedText text={site.role} animateOn="view" sequential revealDirection="start" speed={40} />
+        <DecryptedText key={locale} text={site.role[locale]} animateOn="view" sequential revealDirection="start" speed={40} />
       </p>
 
       <motion.p
@@ -60,7 +64,7 @@ export function Hero() {
         transition={{ duration: 0.8, delay: 0.6, ease }}
         className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-muted sm:text-xl"
       >
-        {site.tagline}
+        {site.tagline[locale]}
       </motion.p>
 
       <motion.div
@@ -73,14 +77,14 @@ export function Hero() {
           href="#trabajo"
           className="inline-flex h-11 items-center gap-2 rounded-full bg-white px-6 text-sm font-medium text-black transition hover:bg-white/85"
         >
-          Ver proyectos
+          {t("seeProjects")}
           <span aria-hidden>↓</span>
         </a>
         <a
           href="#contacto"
           className="inline-flex h-11 items-center rounded-full border border-white/15 px-6 text-sm font-medium transition hover:border-white/40 hover:bg-white/5"
         >
-          Contacto
+          {t("contact")}
         </a>
       </motion.div>
     </section>

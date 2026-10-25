@@ -1,0 +1,52 @@
+{
+  "Metadata": {
+    "locale": "es_ES"
+  },
+  "Nav": {
+    "label": "Principal",
+    "work": "Trabajo",
+    "about": "Sobre mí",
+    "contact": "Contacto",
+    "skip": "Saltar a proyectos",
+    "switchLanguage": "Ver en inglés"
+  },
+  "Hero": {
+    "available": "Disponible para nuevos proyectos",
+    "seeProjects": "Ver proyectos",
+    "contact": "Contacto"
+  },
+  "Projects": {
+    "title": "Trabajo reciente",
+    "hintHover": "Pasa el cursor para ver cada sitio en vivo.",
+    "hintClick": "Haz clic en un proyecto para entrar.",
+    "enter": "Entrar",
+    "viewCode": "Ver código",
+    "pendingDeploy": "Deploy pendiente",
+    "comingSoon": "próximamente",
+    "stack": "Tecnologías",
+    "openLive": "Entrar a {title}: abre el sitio en vivo",
+    "openRepo": "{title}: abre el repositorio en GitHub",
+    "livePreview": "Vista previa en vivo de {title}"
+  },
+  "Portal": {
+    "back": "Volver",
+    "openNewTab": "Abrir en pestaña nueva",
+    "open": "Abrir",
+    "opening": "Abriendo portal…"
+  },
+  "About": {
+    "title": "Sobre mí",
+    "stack": "Stack reciente",
+    "liveProjects": "Proyectos en vivo",
+    "base": "Base"
+  },
+  "Contact": {
+    "title": "Contacto",
+    "heading": "¿Construimos algo juntos?",
+    "body": "Cuéntame tu idea. Respondo rápido."
+  },
+  "NotFound": {
+    "title": "No encontramos esta página",
+    "back": "Volver al inicio"
+  }
+}

@@ -32,7 +32,8 @@
     "back": "Back",
     "openNewTab": "Open in new tab",
     "open": "Open",
-    "opening": "Opening portal…"
+    "opening": "Opening portal…",
+    "escHint": "Move the cursor off the site to use Esc"
   },
   "About": {
     "title": "About",

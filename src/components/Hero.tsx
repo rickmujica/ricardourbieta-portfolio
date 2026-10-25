@@ -51,7 +51,7 @@ export function Hero() {
         trigger="load"
         delay={120}
         animateBy="letters"
-        className="text-gradient justify-center text-5xl font-semibold tracking-[-0.04em] sm:text-7xl md:text-8xl"
+        className="text-fade justify-center text-5xl font-semibold tracking-[-0.04em] sm:text-7xl md:text-8xl"
       />
 
       <p className="mt-6 font-mono text-sm uppercase tracking-[0.2em] text-muted">

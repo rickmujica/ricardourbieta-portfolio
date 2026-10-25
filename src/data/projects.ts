@@ -21,7 +21,7 @@ export const projects: Project[] = [
     description:
       "Portal de propiedades para Paraguay con búsqueda en mapa, favoritos, avisos por correo y un diferencial: video aéreo y tours 3D por fotogrametría con dron.",
     year: 2026,
-    stack: ["Next.js 16", "Supabase", "PostGIS", "Cloudflare R2", "MapLibre"],
+    stack: ["Next.js 16", "TypeScript", "Supabase", "PostGIS", "Cloudflare R2", "MapLibre"],
     url: "https://portal-inmobiliario-xi.vercel.app",
     repo: "https://github.com/rickmujica/portal-inmobiliario",
     poster: "/projects/portal-inmobiliario.jpg",

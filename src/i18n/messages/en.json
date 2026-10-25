@@ -1,0 +1,52 @@
+{
+  "Metadata": {
+    "locale": "en_US"
+  },
+  "Nav": {
+    "label": "Main",
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "skip": "Skip to projects",
+    "switchLanguage": "View in Spanish"
+  },
+  "Hero": {
+    "available": "Available for new projects",
+    "seeProjects": "See projects",
+    "contact": "Contact"
+  },
+  "Projects": {
+    "title": "Recent work",
+    "hintHover": "Hover to see each site live.",
+    "hintClick": "Click a project to step inside.",
+    "enter": "Enter",
+    "viewCode": "View code",
+    "pendingDeploy": "Deploy pending",
+    "comingSoon": "coming soon",
+    "stack": "Technologies",
+    "openLive": "Enter {title}: opens the live site",
+    "openRepo": "{title}: opens the GitHub repository",
+    "livePreview": "Live preview of {title}"
+  },
+  "Portal": {
+    "back": "Back",
+    "openNewTab": "Open in new tab",
+    "open": "Open",
+    "opening": "Opening portal…"
+  },
+  "About": {
+    "title": "About",
+    "stack": "Recent stack",
+    "liveProjects": "Live projects",
+    "base": "Based in"
+  },
+  "Contact": {
+    "title": "Contact",
+    "heading": "Shall we build something?",
+    "body": "Tell me about your idea. I reply fast."
+  },
+  "NotFound": {
+    "title": "We couldn't find this page",
+    "back": "Back to home"
+  }
+}

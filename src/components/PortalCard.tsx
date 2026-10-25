@@ -1,5 +1,6 @@
 "use client";
 
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { BrowserFrame } from "@/components/BrowserFrame";
 import SpotlightCard from "@/components/reactbits/SpotlightCard";
@@ -17,6 +18,8 @@ type Props = {
 const HOVER_DELAY = 250;
 
 export function PortalCard({ project, featured, hidden, onOpen }: Props) {
+  const t = useTranslations("Projects");
+  const locale = useLocale();
   const [live, setLive] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
@@ -47,11 +50,7 @@ export function PortalCard({ project, featured, hidden, onOpen }: Props) {
         onPointerEnter={start}
         onPointerLeave={stop}
         onFocus={() => project.url && setLive(true)}
-        aria-label={
-          project.url
-            ? `Entrar a ${project.title}: abre el sitio en vivo`
-            : `${project.title}: abre el repositorio en GitHub`
-        }
+        aria-label={t(project.url ? "openLive" : "openRepo", { title: project.title })}
         className="block w-full cursor-pointer rounded-2xl p-3 text-left outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:p-4"
       >
         {hidden ? (
@@ -70,12 +69,12 @@ export function PortalCard({ project, featured, hidden, onOpen }: Props) {
               <span className="font-mono text-xs text-muted">{project.year}</span>
               {!project.url && (
                 <span className="rounded-full border border-white/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-muted">
-                  Deploy pendiente
+                  {t("pendingDeploy")}
                 </span>
               )}
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-muted">{project.description}</p>
-            <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="Tecnologías">
+            <p className="mt-2 text-sm leading-relaxed text-muted">{project.description[locale]}</p>
+            <ul className="mt-4 flex flex-wrap gap-1.5" aria-label={t("stack")}>
               {project.stack.map((t) => (
                 <li key={t} className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-0.5 font-mono text-[11px] text-neutral-300">
                   {t}
@@ -87,7 +86,7 @@ export function PortalCard({ project, featured, hidden, onOpen }: Props) {
             aria-hidden
             className="inline-flex h-9 shrink-0 items-center gap-2 self-start rounded-full border border-white/15 px-4 text-sm transition group-hover:border-white group-hover:bg-white group-hover:text-black"
           >
-            {project.url ? "Entrar" : "Ver código"}
+            {project.url ? t("enter") : t("viewCode")}
             <span className="transition-transform group-hover:translate-x-0.5">→</span>
           </span>
         </div>

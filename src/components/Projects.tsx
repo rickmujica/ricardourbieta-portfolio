@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence } from "motion/react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { PortalCard } from "@/components/PortalCard";
 import { PortalOverlay } from "@/components/PortalOverlay";
@@ -13,13 +14,14 @@ const isWide = (i: number) =>
   i === 0 || (i === projects.length - 1 && (projects.length - 1) % 2 === 1);
 
 export function Projects() {
+  const t = useTranslations("Projects");
   const [active, setActive] = useState<Project | null>(null);
 
   return (
     <section aria-labelledby="trabajo" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-24 sm:px-6">
-      <SectionHeading id="trabajo" index="01" title="Trabajo reciente">
-        <span className="hidden [@media(hover:hover)]:inline">Pasa el cursor para ver cada sitio en vivo. </span>
-        Haz clic en un proyecto para entrar.
+      <SectionHeading id="trabajo" index="01" title={t("title")}>
+        <span className="hidden [@media(hover:hover)]:inline">{t("hintHover")} </span>
+        {t("hintClick")}
       </SectionHeading>
 
       <ul className="grid gap-6 md:grid-cols-2">

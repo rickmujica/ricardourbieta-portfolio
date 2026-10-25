@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { hostOf } from "@/components/BrowserFrame";
 import type { Project } from "@/data/projects";
@@ -11,6 +12,7 @@ type Props = { project: Project; onClose: () => void };
 // El "portal": la tarjeta se expande hasta ocupar la pantalla y el sitio
 // queda navegable dentro, con salida rápida (Esc) o apertura en pestaña nueva.
 export function PortalOverlay({ project, onClose }: Props) {
+  const t = useTranslations("Portal");
   const closeRef = useRef<HTMLButtonElement>(null);
   const [loaded, setLoaded] = useState(false);
   const url = project.url!;
@@ -50,7 +52,7 @@ export function PortalOverlay({ project, onClose }: Props) {
             onClick={onClose}
             className="inline-flex h-7 items-center gap-1.5 rounded-md px-2 text-xs text-muted transition hover:bg-white/10 hover:text-white focus-visible:outline-2 focus-visible:outline-white/60"
           >
-            <span aria-hidden>←</span> Volver
+            <span aria-hidden>←</span> {t("back")}
             <kbd className="ml-1 hidden rounded border border-white/15 px-1 font-mono text-[10px] sm:inline">Esc</kbd>
           </button>
           <span className="mx-auto flex min-w-0 items-center gap-1.5 truncate rounded-md bg-white/5 px-3 py-1 font-mono text-xs text-muted">
@@ -63,8 +65,8 @@ export function PortalOverlay({ project, onClose }: Props) {
             rel="noopener noreferrer"
             className="inline-flex h-7 items-center gap-1.5 rounded-md bg-white px-2.5 text-xs font-medium text-black transition hover:bg-white/85"
           >
-            <span className="hidden sm:inline">Abrir en pestaña nueva</span>
-            <span className="sm:hidden">Abrir</span>
+            <span className="hidden sm:inline">{t("openNewTab")}</span>
+            <span className="sm:hidden">{t("open")}</span>
             <span aria-hidden>↗</span>
           </a>
         </div>
@@ -73,7 +75,7 @@ export function PortalOverlay({ project, onClose }: Props) {
           <Image src={project.poster} alt="" fill sizes="100vw" className="object-cover object-top" />
           {!loaded && (
             <p className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/70 px-3 py-1 font-mono text-xs text-muted backdrop-blur">
-              Abriendo portal…
+              {t("opening")}
             </p>
           )}
           <motion.iframe

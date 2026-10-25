@@ -47,6 +47,15 @@ body {
   color: transparent;
 }
 
+/* Mismo degradado que .text-gradient, pero con una máscara en vez de background-clip.
+   Safari no pinta background-clip: text sobre hijos con transform o filter (las letras
+   animadas de BlurText), y el título quedaba invisible. */
+.text-fade {
+  color: #fff;
+  -webkit-mask-image: linear-gradient(180deg, #000 30%, rgba(0, 0, 0, 0.45));
+  mask-image: linear-gradient(180deg, #000 30%, rgba(0, 0, 0, 0.45));
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

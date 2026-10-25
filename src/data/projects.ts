@@ -52,13 +52,25 @@ export const projects: Project[] = [
     accent: "#818cf8",
   },
   {
+    slug: "nike-3d",
+    title: "Nike 3D Renders",
+    description:
+      "Visor 3D de productos Nike con modelos glTF, carga progresiva y controles de órbita. Incluye un escaneo 3D de mis propias Jordan.",
+    year: 2025,
+    stack: ["Three.js", "glTF", "Vite"],
+    url: "https://nike-3d-renders-three-js.vercel.app",
+    repo: "https://github.com/rickmujica/Nike3DrendersThreeJS",
+    poster: "/projects/nike-3d.jpg",
+    accent: "#f97316",
+  },
+  {
     slug: "crossy-road",
     title: "Crossy Road 3D",
     description:
       "Clon jugable de Crossy Road con generación de carriles, tráfico, detección de colisiones y controles de teclado y táctiles.",
     year: 2025,
     stack: ["Three.js", "JavaScript", "Vite"],
-    url: "https://crossy-road-three-js.vercel.app",
+    url: "https://crossy-road-three-js-am6k.vercel.app",
     repo: "https://github.com/rickmujica/crossy-road-ThreeJS",
     poster: "/projects/crossy-road.jpg",
     accent: "#a3e635",

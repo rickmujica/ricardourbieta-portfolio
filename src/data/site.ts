@@ -6,8 +6,7 @@ export const site = {
   location: "Paraguay",
   // Dirección pública del portafolio, sin "/" final. Se usa para SEO y la imagen OG.
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ricardourbieta.vercel.app",
-  // TODO: reemplazar por el correo de contacto público.
-  email: "hola@ricardourbieta.com",
+  email: "ricardo.urbieta@gmail.com",
   available: true,
   socials: [
     { label: "GitHub", href: "https://github.com/rickmujica" },

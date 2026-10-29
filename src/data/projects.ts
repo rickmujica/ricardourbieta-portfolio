@@ -18,6 +18,20 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "3d-printing-ecommerce",
+    title: "Capa 3D",
+    description: {
+      es: "Elegí un modelo del catálogo, giralo en 3D, configurá material y color, y te lo imprimimos.",
+      en: "Choose a model from the catalog, rotate it in 3D, configure material and color, and we'll print it for you.",
+    },
+    year: 2026,
+    stack: ["Next.js 16", "TypeScript", "Supabase", "PostGIS", "Cloudflare R2", "MapLibre"],
+    url: "https://3dprint-ecommerce.ricardo-urbieta.workers.dev/",
+    repo: "https://github.com/rickmujica/3dprint-ecommerce.git",
+    poster: "/projects/capa3d-home.png",
+    accent: "#7c3aed",
+  },
+  {
     slug: "portal-inmobiliario",
     title: "Portal Inmobiliario",
     description: {

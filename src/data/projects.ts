@@ -42,7 +42,6 @@ export const projects: Project[] = [
     stack: ["React Native", "Expo", "Expo Router", "SQLite"],
     url: null,
     repo: "https://github.com/rickmujica/guppylog",
-    // Placeholder: reemplazar con capturas reales de la app.
     poster: "/projects/guppylog.jpg",
     accent: "#2dd4bf",
   },

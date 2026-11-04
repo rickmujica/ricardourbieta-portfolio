@@ -32,6 +32,21 @@ export const projects: Project[] = [
     accent: "#7c3aed",
   },
   {
+    slug: "guppylog",
+    title: "GuppyLog",
+    description: {
+      es: "App móvil para acuaristas: registrá tus acuarios, cambios de agua y parámetros con avisos fuera de rango, recibí recordatorios y consultá un compendio de peces y enfermedades.",
+      en: "Mobile app for fishkeepers: log your tanks, water changes and parameters with out-of-range alerts, get reminders and browse a guide to fish and diseases.",
+    },
+    year: 2026,
+    stack: ["React Native", "Expo", "Expo Router", "SQLite"],
+    url: null,
+    repo: "https://github.com/rickmujica/guppylog",
+    // Placeholder: reemplazar con capturas reales de la app.
+    poster: "/projects/guppylog.jpg",
+    accent: "#2dd4bf",
+  },
+  {
     slug: "portal-inmobiliario",
     title: "Portal Inmobiliario",
     description: {

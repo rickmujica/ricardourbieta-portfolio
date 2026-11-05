@@ -71,7 +71,7 @@ export const projects: Project[] = [
     },
     year: 2026,
     stack: ["React Native", "Expo SDK 56", "Expo Router", "Reanimated"],
-    url: null,
+    url: "https://macrostats.vercel.app",
     repo: "https://github.com/rickmujica/macrostats",
     poster: "/projects/macrozone.jpg",
     accent: "#60a5fa",

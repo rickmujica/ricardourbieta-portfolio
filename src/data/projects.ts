@@ -63,8 +63,8 @@ export const projects: Project[] = [
     accent: "#34d399",
   },
   {
-    slug: "macrozone",
-    title: "MacroZone",
+    slug: "macrostats",
+    title: "MacroStats",
     description: {
       es: "App móvil para registrar calorías y macros, con metas calculadas desde tu perfil, historial semanal y recordatorios. Todo queda en el dispositivo.",
       en: "Mobile app to track calories and macros, with goals calculated from your profile, weekly history and reminders. Everything stays on the device.",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     stack: ["React Native", "Expo SDK 56", "Expo Router", "Reanimated"],
     url: "https://macrostats.vercel.app",
     repo: "https://github.com/rickmujica/macrostats",
-    poster: "/projects/macrozone.jpg",
+    poster: "/projects/macrostats.jpg",
     accent: "#60a5fa",
     device: "phone",
   },

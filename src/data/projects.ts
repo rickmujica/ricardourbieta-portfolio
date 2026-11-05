@@ -14,6 +14,8 @@ export type Project = {
   poster: string;
   // Color de acento del brillo de la tarjeta.
   accent: string;
+  // "phone" para apps móviles: el portal las muestra dentro de un marco de teléfono.
+  device?: "phone";
 };
 
 export const projects: Project[] = [
@@ -44,6 +46,7 @@ export const projects: Project[] = [
     repo: "https://github.com/rickmujica/guppylog",
     poster: "/projects/guppylog.jpg",
     accent: "#2dd4bf",
+    device: "phone",
   },
   {
     slug: "portal-inmobiliario",
@@ -72,6 +75,7 @@ export const projects: Project[] = [
     repo: "https://github.com/rickmujica/macrostats",
     poster: "/projects/macrozone.jpg",
     accent: "#60a5fa",
+    device: "phone",
   },
   {
     slug: "earth-threejs",

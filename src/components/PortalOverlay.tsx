@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { hostOf } from "@/components/BrowserFrame";
+import { PhoneFrame } from "@/components/PhoneFrame";
 import type { Project } from "@/data/projects";
 
 type Props = { project: Project; onClose: () => void };
@@ -24,6 +25,7 @@ export function PortalOverlay({ project, onClose }: Props) {
   // true mientras el foco del teclado está dentro del sitio embebido.
   const [inFrame, setInFrame] = useState(false);
   const url = project.url!;
+  const phone = project.device === "phone";
 
   useEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
@@ -105,8 +107,40 @@ export function PortalOverlay({ project, onClose }: Props) {
           </a>
         </div>
         <div className="relative flex-1 bg-neutral-950" onPointerLeave={reclaimFocus}>
-          {/* La captura sostiene la transición hasta que el sitio real termina de cargar. */}
-          <Image src={project.poster} alt="" fill sizes="100vw" className="object-cover object-top" />
+          {phone ? (
+            // Las apps móviles corren a tamaño de teléfono, centradas sobre un brillo de su color.
+            <>
+              <div
+                aria-hidden
+                className="absolute inset-0"
+                style={{ background: `radial-gradient(50% 55% at 50% 50%, ${project.accent}2e, transparent 75%)` }}
+              />
+              <PhoneFrame
+                ref={frameRef}
+                src={url}
+                title={project.title}
+                loaded={loaded}
+                onLoad={handleLoad}
+                placeholder={<div className="absolute inset-0 animate-pulse bg-neutral-800" />}
+              />
+            </>
+          ) : (
+            <>
+              {/* La captura sostiene la transición hasta que el sitio real termina de cargar. */}
+              <Image src={project.poster} alt="" fill sizes="100vw" className="object-cover object-top" />
+              <motion.iframe
+                src={url}
+                title={project.title}
+                ref={frameRef}
+                onLoad={handleLoad}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: loaded ? 1 : 0 }}
+                transition={{ duration: 0.4 }}
+                className="absolute inset-0 size-full border-0 bg-white"
+                allow="fullscreen; clipboard-write; geolocation; xr-spatial-tracking"
+              />
+            </>
+          )}
           {inFrame && (
             <p
               aria-live="polite"
@@ -116,21 +150,10 @@ export function PortalOverlay({ project, onClose }: Props) {
             </p>
           )}
           {!loaded && (
-            <p className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/70 px-3 py-1 font-mono text-xs text-muted backdrop-blur">
+            <p className="absolute bottom-4 left-1/2 z-10 -translate-x-1/2 rounded-full bg-black/70 px-3 py-1 font-mono text-xs text-muted backdrop-blur">
               {t("opening")}
             </p>
           )}
-          <motion.iframe
-            src={url}
-            title={project.title}
-            ref={frameRef}
-            onLoad={handleLoad}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: loaded ? 1 : 0 }}
-            transition={{ duration: 0.4 }}
-            className="absolute inset-0 size-full border-0 bg-white"
-            allow="fullscreen; clipboard-write; geolocation; xr-spatial-tracking"
-          />
         </div>
       </motion.div>
     </div>

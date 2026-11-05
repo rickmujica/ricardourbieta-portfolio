@@ -66,7 +66,8 @@ export function BrowserFrame({ project, live, priority }: Props) {
           sizes="(min-width: 1024px) 1100px, (min-width: 768px) 50vw, 100vw"
           className="object-cover object-top transition duration-700 group-hover:scale-[1.02]"
         />
-        {live && project.url && (
+        {/* Las apps móviles no se cargan en la tarjeta: a ancho de escritorio no se verían como en un teléfono. */}
+        {live && project.url && project.device !== "phone" && (
           <iframe
             src={project.url}
             title={t("livePreview", { title: project.title })}

@@ -34,6 +34,21 @@ export const projects: Project[] = [
     accent: "#7c3aed",
   },
   {
+    slug: "gymstats",
+    title: "GymStats",
+    description: {
+      es: "App para registrar tus entrenos de gimnasio: rutinas, series y récords, calculadora de 1RM, volumen semanal y un mapa de recuperación muscular, con un catálogo de 302 ejercicios ilustrados.",
+      en: "App to log your gym workouts: routines, sets and personal records, a 1RM calculator, weekly volume and a muscle recovery map, with a catalog of 302 illustrated exercises.",
+    },
+    year: 2026,
+    stack: ["React Native", "Expo SDK 58", "Expo Router", "Supabase", "Zustand"],
+    url: null,
+    repo: "https://github.com/rickmujica/gymstats",
+    poster: "/projects/gymstats.jpg",
+    accent: "#fb923c",
+    device: "phone",
+  },
+  {
     slug: "guppylog",
     title: "GuppyLog",
     description: {

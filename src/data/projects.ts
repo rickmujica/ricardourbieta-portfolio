@@ -42,7 +42,7 @@ export const projects: Project[] = [
     },
     year: 2026,
     stack: ["React Native", "Expo", "Expo Router", "SQLite"],
-    url: null,
+    url: "https://guppylog.vercel.app",
     repo: "https://github.com/rickmujica/guppylog",
     poster: "/projects/guppylog.jpg",
     accent: "#2dd4bf",

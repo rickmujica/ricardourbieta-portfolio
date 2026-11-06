@@ -42,7 +42,7 @@ export const projects: Project[] = [
     },
     year: 2026,
     stack: ["React Native", "Expo SDK 58", "Expo Router", "Supabase", "Zustand"],
-    url: null,
+    url: "https://gymstats-ten.vercel.app",
     repo: "https://github.com/rickmujica/gymstats",
     poster: "/projects/gymstats.jpg",
     accent: "#fb923c",
